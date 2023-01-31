@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="10dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:id="@+id/game_picture"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_name"
+                android:layout_toRightOf="@+id/game_picture"
+                android:layout_alignParentTop="true"
+                android:textSize="18sp"
+                android:text="jeu"
+                android:fontFamily="@font/proxima_nova"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_publisher"
+                android:layout_toRightOf="@+id/game_picture"
+                android:layout_below="@+id/game_name"
+                android:text="editeur"
+                android:textSize="12sp"
+                android:fontFamily="@font/proxima_nova"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/game_price"
+                android:layout_toRightOf="@+id/game_picture"
+                android:layout_below="@+id/game_publisher"
+                android:layout_marginTop="10dp"
+                android:text="12€"
+                android:textSize="12sp"
+                android:fontFamily="@font/proxima_nova"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/stime_blue"
+            android:textColor="@color/white"
+            android:fontFamily="@font/proxima_nova"
+            android:textSize="18sp"
+            android:text="@string/about"
+            android:textAllCaps="false"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
