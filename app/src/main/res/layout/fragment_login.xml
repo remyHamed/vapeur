@@ -25,7 +25,7 @@
                 android:text="@string/login_title"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:text="@string/login_message"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/username"
@@ -103,7 +103,6 @@
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/proxima_nova"
-            android:style="@style/Widget.AppCompat.Button.Borderless"
             android:text="@string/forgotten_password_title"
             android:textAllCaps="false"
             android:textColor="@color/white" />

@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface BackendApi {
-    @POST("users")
+    @POST("login")
     fun login(@Body userLogin: UserLogin): Call<User>
 }
