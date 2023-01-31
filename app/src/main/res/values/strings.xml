@@ -29,4 +29,6 @@
     <string name="send_new_password">Renvoyer mon mot de passe</string>
     <string name="about">En savoir plus</string>
     <string name="wishes">Ma liste de souhaits</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
