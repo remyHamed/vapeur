@@ -1,5 +1,37 @@
 <resources>
-    <string name="app_name">vapeur</string>
+    <string name="app_name">Vapeur</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="login_title">Bienvenue !</string>
+    <string name="login_user">E-mail</string>
+    <string name="login_password">Mot de passe</string>
+    <string name="login_message">Veuillez vous connecter ou créer un nouveau compte pour utiliser l'application</string>
+    <string name="login_login">Se connecter</string>
+    <string name="login_register">Créer un nouveau compte</string>
+
+    <!-- Strings related to register -->
+    <string name="register_title">Inscription</string>
+    <string name="register_message">Veuillez saisir ces différentes informations, afin que vos listes soient sauvegardées.</string>
+
+    <string name="user_name">Nom d'utilisateur</string>
+    <string name="password_verification">Vérification du mot de passe</string>
+    <string name="register">S'inscrire</string>
+    <string name="forgotten_password_title">Mot de passe oublié</string>
+    <string name="forgotten_password_message">Veuillez saisir votre email afin de réinitialiser votre mot de passe</string>
+    <string name="send_new_password">Renvoyer mon mot de passe</string>
+    <string name="about">En savoir plus</string>
+    <string name="wishes">Ma liste de souhaits</string>
+
+    <string name="home">Accueil</string>
+
 </resources>
