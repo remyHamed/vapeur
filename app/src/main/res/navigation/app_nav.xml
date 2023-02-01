@@ -17,6 +17,10 @@
         <action
             android:id="@+id/action_login_to_forgotten_password"
             app:destination="@id/forgotten_password" />
+        <action
+            android:id="@+id/action_list_mpg"
+            app:destination="@+id/MostPlayedGameList"
+            />
     </fragment>
     <fragment
         android:id="@+id/register"
@@ -28,4 +32,9 @@
         android:name="com.example.vapeur.forgotten_password"
         android:label="fragment_forgotten_password"
         tools:layout="@layout/fragment_forgotten_password" />
+    <fragment
+        android:id="@+id/MostPlayedGameList"
+        android:name="com.example.vapeur.MostPlayedGameList"
+        android:label="MostPlayedGameList"
+        tools:layout="@layout/fragment_most_played_game_list" />
 </navigation>

@@ -2,8 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".login">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -76,7 +75,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="80dp"
                 android:background="@drawable/button_solid"
-                android:enabled="false"
+
                 android:fontFamily="@font/proxima_nova"
                 android:text="@string/login_login"
                 android:textAllCaps="false"
@@ -90,7 +89,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/hallow_button"
-                android:enabled="false"
                 android:text="@string/action_sign_in"
                 android:textAllCaps="false" />
 
@@ -106,6 +104,18 @@
             android:text="@string/forgotten_password_title"
             android:textAllCaps="false"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_test_chloe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/proxima_nova"
+            android:text="chloe test"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
 
     </RelativeLayout>
 

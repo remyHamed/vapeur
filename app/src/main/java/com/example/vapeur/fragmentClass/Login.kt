@@ -4,27 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.vapeur.R
-import com.example.vapeur.networkClass.UserLogin
-import com.example.vapeur.networkRequest.NetworkRequest
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.example.vapeur.databinding.FragmentLoginBinding
 
 class Login: Fragment() {
-    val network :NetworkRequest = NetworkRequest()
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
+    //lateinit = sera initialisé obligatoirement
+    private lateinit var binding: FragmentLoginBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        button_login
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        GlobalScope.launch(Dispatchers.Main) {
-            val user  = network.login("r@r.fr", "azerty")
-            println(user._id)
+        binding.buttonTestChloe.setOnClickListener {
+            findNavController().navigate(R.id.MostPlayedGameList)
         }
-        return inflater.inflate(R.layout.fragment_login, container, false)
 
+        return binding.root
     }
 }
