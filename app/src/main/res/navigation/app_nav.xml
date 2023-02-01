@@ -8,6 +8,5 @@
     <fragment
         android:id="@+id/login"
         android:name="com.example.vapeur.login"
-        android:label="fragment_login2"
-        tools:layout="@layout/fragment_login2" />
+        android:label="fragment_login2" />
 </navigation>
