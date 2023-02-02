@@ -43,13 +43,9 @@ class Login: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //val editText = findViewById(R.id.username)
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_login, container, false)
+
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val network : NetworkRequest = NetworkRequest()
-
-
 
         binding.buttonLogin.setOnClickListener {
 
@@ -64,7 +60,6 @@ class Login: Fragment() {
                           Toast.makeText(getActivity(), user.mail, Toast.LENGTH_SHORT).show()
                           findNavController().navigate(R.id.MostPlayedGameList)
                       }
-                      println("user" + user.mail)
                   }catch (h:HttpException){
                       withContext(Dispatchers.Main){
                           Toast.makeText(getActivity(),h.toString(), Toast.LENGTH_SHORT).show()
@@ -79,6 +74,9 @@ class Login: Fragment() {
             }
         }
 
+        binding.goToRegister.setOnClickListener{
+            findNavController().navigate(R.id.registerPlayer)
+        }
 
         binding.buttonTestChloe.setOnClickListener {
             findNavController().navigate(R.id.MostPlayedGameList)

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    android:background="@drawable/wallpaper_playstation"
+    tools:context=".registerPlayer">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,7 +106,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="80dp"
                 android:background="@drawable/button_solid"
-                android:enabled="false"
                 android:fontFamily="@font/proxima_nova"
                 android:text="@string/register"
                 android:textAllCaps="false"

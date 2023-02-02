@@ -81,17 +81,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/button_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/hallow_button"
-                android:text="@string/action_sign_in"
-                android:textAllCaps="false" />
-
         </LinearLayout>
 
 
@@ -105,6 +94,20 @@
             android:text="@string/forgotten_password_title"
             android:textAllCaps="false"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/go_to_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="83dp"
+            android:background="@color/black"
+            android:fontFamily="@font/proxima_nova"
+            android:text="@string/s_inscrire"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
         <Button
             android:id="@+id/button_test_chloe"
             android:layout_width="match_parent"
@@ -115,6 +118,17 @@
             android:text="chloe test"
             android:textAllCaps="false"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/hallow_button"
+            android:text="@string/action_sign_in"
+            android:textAllCaps="false" />
 
 
     </RelativeLayout>

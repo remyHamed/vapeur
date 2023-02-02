@@ -3,6 +3,7 @@ package com.example.vapeur.networkRequest
 import com.example.vapeur.Class.User
 import com.example.vapeur.Interfaces.BackendApi
 import com.example.vapeur.networkClass.UserLogin
+import com.example.vapeur.networkClass.UserRegister
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.await
@@ -25,5 +26,13 @@ class NetworkRequest {
         password : String): User {
         val credential = UserLogin(mail, password)
         return retrofit.login(credential).await()
+    }
+
+    suspend fun create(
+        userName :String,
+        mail:String,
+        password : String): User {
+        val bodyUser = UserRegister(userName,mail, password)
+        return retrofit.create(bodyUser).await()
     }
 }

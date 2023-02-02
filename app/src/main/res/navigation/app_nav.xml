@@ -12,21 +12,16 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login_to_register"
-            app:destination="@id/register" />
-        <action
             android:id="@+id/action_login_to_forgotten_password"
             app:destination="@id/forgotten_password" />
         <action
             android:id="@+id/action_list_mpg"
             app:destination="@+id/MostPlayedGameList"
             />
+        <action
+            android:id="@+id/action_login_to_registerPlayer"
+            app:destination="@id/registerPlayer" />
     </fragment>
-    <fragment
-        android:id="@+id/register"
-        android:name="com.example.vapeur."
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/forgotten_password"
         android:name="com.example.vapeur.forgotten_password"
@@ -47,4 +42,9 @@
         android:label="DetailsDuJeux"
         tools:layout="@layout/fragment_details_du_jeux">
         </fragment>
+    <fragment
+        android:id="@+id/registerPlayer"
+        android:name="com.example.vapeur.registerPlayer"
+        android:label="fragment_register_player"
+        tools:layout="@layout/fragment_register_player" />
 </navigation>
