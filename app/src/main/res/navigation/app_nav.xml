@@ -36,5 +36,15 @@
         android:id="@+id/MostPlayedGameList"
         android:name="com.example.vapeur.MostPlayedGameList"
         android:label="MostPlayedGameList"
-        tools:layout="@layout/fragment_most_played_game_list" />
+        tools:layout="@layout/fragment_most_played_game_list">
+        <action
+            android:id="@+id/action_SwitchToDetailsGame"
+            app:destination="@+id/DetailsDuJeux"/>
+    </fragment>
+    <fragment
+        android:id="@+id/DetailsDuJeux"
+        android:name="com.example.vapeur.DetailsDuJeux"
+        android:label="DetailsDuJeux"
+        tools:layout="@layout/fragment_details_du_jeux">
+        </fragment>
 </navigation>

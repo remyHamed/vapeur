@@ -1,13 +1,19 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.stime.GameViewHolder
+import com.example.vapeur.DetailsDuJeux
 import com.example.vapeur.MostPlayedGameList
 import com.example.vapeur.R
+import com.example.vapeur.databinding.FragmentDetailsDuJeuxBinding
 
 
-class GameAdapter(private val games: List<MostPlayedGameList.GameData>) : RecyclerView.Adapter<GameViewHolder>() {
+class GameAdapter(private val games: List<MostPlayedGameList.GameData>, private val fragment: Fragment) : RecyclerView.Adapter<GameViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.game_item, parent, false)
         return GameViewHolder(view)
@@ -22,6 +28,10 @@ class GameAdapter(private val games: List<MostPlayedGameList.GameData>) : Recycl
         Glide.with(holder.itemView.context)
             .load(game.header_image)
             .into(holder.header_image)
+
+        holder.button_item.setOnClickListener{
+            fragment.findNavController().navigate(R.id.DetailsDuJeux, bundleOf("appid" to game.appid))
+        }
     }
 
     override fun getItemCount(): Int {

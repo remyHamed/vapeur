@@ -21,6 +21,14 @@
             android:padding="16dp">
 
             <ImageView
+                android:id="@+id/background"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp" />
+
+            <ImageView
                 android:id="@+id/header_image"
                 android:layout_width="60dp"
                 android:layout_height="80dp"
@@ -82,6 +90,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/button_item"
             android:layout_width="20dp"
             android:layout_height="match_parent"
             android:background="@color/stime_blue"
