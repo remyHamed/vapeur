@@ -28,4 +28,14 @@
         android:name="com.example.vapeur.forgotten_password"
         android:label="fragment_forgotten_password"
         tools:layout="@layout/fragment_forgotten_password" />
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.vapeur.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/description"
+        android:name="com.example.vapeur.description"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" />
 </navigation>

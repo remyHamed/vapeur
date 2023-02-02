@@ -76,7 +76,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="80dp"
                 android:background="@drawable/button_solid"
-                android:enabled="false"
                 android:fontFamily="@font/proxima_nova"
                 android:text="@string/login_login"
                 android:textAllCaps="false"
@@ -90,7 +89,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/hallow_button"
-                android:enabled="false"
                 android:text="@string/action_sign_in"
                 android:textAllCaps="false" />
 
@@ -105,8 +103,17 @@
             android:fontFamily="@font/proxima_nova"
             android:text="@string/forgotten_password_title"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle" />
 
     </RelativeLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
 </FrameLayout>
