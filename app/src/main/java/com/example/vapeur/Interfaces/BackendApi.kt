@@ -7,6 +7,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface BackendApi {
-    @POST("user")
+    @POST("user/login")
     fun loginAsync(@Body userLogin: UserLogin): Deferred<User>
 }

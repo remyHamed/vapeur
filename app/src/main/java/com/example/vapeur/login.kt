@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import com.example.vapeur.NetworkRequest.NetworkRequest
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -34,15 +35,13 @@ class login : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
         val network : NetworkRequest = NetworkRequest()
-        println("yo")
         GlobalScope.launch(Dispatchers.IO) {
-            println("you")
+
            val user = network.login("x@r.fr", "azerty")
-            println(" hoh" + user._id)
-
-            println("coucu")
-
+            println("user" + user.mail)
+            view?.findViewById<TextView>(R.id.button_login)?.text != user.mail
         }
 
     }

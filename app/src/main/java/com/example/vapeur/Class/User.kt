@@ -2,16 +2,12 @@ package com.example.vapeur.Class
 
 import com.google.gson.annotations.SerializedName
 
-class User {
+class User(
     @SerializedName("mail")
-    public var mail: String = "";
-    @SerializedName("password")
-    public var password: String = "";
-    @SerializedName("_id")
-    public val _id: String = "";
+    val mail: String,
 
-    constructor(mail: String, password: String) {
-        this.mail = mail
-        this.password = password
-    }
-}
+    @SerializedName("password")
+    val password: String,
+    @SerializedName("_id")
+    val _id: String
+    )
