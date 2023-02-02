@@ -81,7 +81,6 @@ class Login: Fragment() {
 
 
         binding.buttonTestChloe.setOnClickListener {
-:
             findNavController().navigate(R.id.MostPlayedGameList)
         }
 
