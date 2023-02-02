@@ -12,7 +12,7 @@ class NetworkRequest {
 
     private val retrofit = Retrofit
         .Builder()
-        .baseUrl("http://localhost:3001/") // change this IP for testing by your actual machine IP
+        .baseUrl("http://10.0.2.2:3001/") // change this IP for testing by your actual machine IP
         .addConverterFactory(
             GsonConverterFactory.create()
         )

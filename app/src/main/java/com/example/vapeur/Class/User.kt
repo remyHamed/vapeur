@@ -2,7 +2,7 @@ package com.example.vapeur.Class
 
 import com.google.gson.annotations.SerializedName
 
-class User (
+class User(
     @SerializedName("mail")
     val mail: String,
     @SerializedName("password")
