@@ -42,4 +42,14 @@
         android:name="com.example.vapeur.description"
         android:label="fragment_description"
         tools:layout="@layout/fragment_description" />
+    <fragment
+        android:id="@+id/wishlist_empty"
+        android:name="com.example.vapeur.wishlist_empty"
+        android:label="fragment_wishlist_empty"
+        tools:layout="@layout/fragment_wishlist_empty" />
+    <fragment
+        android:id="@+id/favoritelist_empty"
+        android:name="com.example.vapeur.favoritelist_empty"
+        android:label="fragment_favoritelist_empty"
+        tools:layout="@layout/fragment_favoritelist_empty" />
 </navigation>
