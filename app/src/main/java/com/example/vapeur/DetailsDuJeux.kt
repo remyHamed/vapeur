@@ -39,7 +39,7 @@ class DetailsDuJeux : Fragment() {
         var name: String,
         var publishers: String,
         var final_formatted: String,
-        var header_image: String
+        var header_image: String,
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,8 +85,6 @@ class DetailsDuJeux : Fragment() {
                     val appidData = responseJson.getAsJsonObject("$appid")
 
                     if (appidData.get("success").asBoolean) {
-
-
                         val data = appidData.getAsJsonObject("data")
                         val gameInfosPrice = data?.getAsJsonObject("price_overview")
 

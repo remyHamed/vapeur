@@ -20,7 +20,6 @@ class GameDetailsAdapter(private val games: ArrayList<DetailsDuJeux.GameData>) :
         val publishers: TextView = itemView.findViewById(R.id.publishers)
         val final_formatted: TextView = itemView.findViewById(R.id.final_formatted)
         val header_image: ImageView = itemView.findViewById(R.id.header_image)
-        val background: ImageView = itemView.findViewById(R.id.background)
     }
 
     override fun onBindViewHolder(holder: InfoViewHolder, position: Int) {
@@ -31,9 +30,6 @@ class GameDetailsAdapter(private val games: ArrayList<DetailsDuJeux.GameData>) :
         Glide.with(holder.itemView.context)
             .load(game.header_image)
             .into(holder.header_image)
-        Glide.with(holder.itemView.context)
-            .load(game.background)
-            .into(holder.background)
     }
 
     override fun getItemCount(): Int {

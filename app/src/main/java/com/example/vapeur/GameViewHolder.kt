@@ -14,4 +14,5 @@ class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val final_formatted: TextView = itemView.findViewById(R.id.final_formatted)
     val header_image: ImageView = itemView.findViewById(R.id.header_image)
     val button_item: Button = itemView.findViewById(R.id.button_item)
+    val background: ImageView = itemView.findViewById(R.id.background)
 }

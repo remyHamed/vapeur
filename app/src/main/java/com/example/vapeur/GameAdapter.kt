@@ -28,6 +28,9 @@ class GameAdapter(private val games: List<MostPlayedGameList.GameData>, private 
         Glide.with(holder.itemView.context)
             .load(game.header_image)
             .into(holder.header_image)
+        Glide.with(holder.itemView.context)
+            .load(game.background)
+            .into(holder.background)
 
         holder.button_item.setOnClickListener{
             fragment.findNavController().navigate(R.id.DetailsDuJeux, bundleOf("appid" to game.appid))
