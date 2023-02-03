@@ -5,6 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.vapeur.databinding.FragmentForgottenPasswordBinding
+import com.example.vapeur.databinding.FragmentLoginBinding
+import com.example.vapeur.networkRequest.NetworkRequest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.HttpException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +29,7 @@ class forgotten_password : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding: FragmentForgottenPasswordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +44,24 @@ class forgotten_password : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forgotten_password, container, false)
+        binding = FragmentForgottenPasswordBinding.inflate(inflater, container, false)
+        val network : NetworkRequest = NetworkRequest()
+        binding.buttonRegister.setOnClickListener{
+            GlobalScope.launch(Dispatchers.IO){
+                val userEmail = binding.userEmail.text.toString()
+                if(userEmail.isNotEmpty()){
+                    try {
+                      network.password(userEmail,"xxxx")
+                    } catch (h: HttpException){
+                        withContext(Dispatchers.Main){
+                            Toast.makeText(getActivity(),h.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+
+        return binding.root;
     }
 
     companion object {

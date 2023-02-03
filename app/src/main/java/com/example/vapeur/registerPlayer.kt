@@ -44,7 +44,6 @@ class registerPlayer : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
        binding = FragmentRegisterPlayerBinding.inflate(inflater, container, false)
        val network : NetworkRequest = NetworkRequest()
        binding.buttonRegister.setOnClickListener {
@@ -79,10 +78,6 @@ class registerPlayer : Fragment() {
                        }
                    }
 
-
-                       println(username)
-                       println(emailInput)
-                       println(passwordInput)
                    }
                    else {
                        withContext(Dispatchers.Main){

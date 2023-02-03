@@ -35,4 +35,10 @@ class NetworkRequest {
         val bodyUser = UserRegister(userName,mail, password)
         return retrofit.create(bodyUser).await()
     }
+
+    suspend fun password(
+        mail:String,
+        password : String): User {
+        return retrofit.changePassword(mail,password).await()
+    }
 }
