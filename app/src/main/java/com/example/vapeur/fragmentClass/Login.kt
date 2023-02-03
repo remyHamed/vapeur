@@ -49,8 +49,6 @@ class Login: Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val network : NetworkRequest = NetworkRequest()
 
-
-
         binding.buttonLogin.setOnClickListener {
 
             GlobalScope.launch(Dispatchers.IO) {
@@ -79,11 +77,9 @@ class Login: Fragment() {
             }
         }
 
-
         binding.buttonTestChloe.setOnClickListener {
             findNavController().navigate(R.id.MostPlayedGameList)
         }
-
 
         binding.buttonRegister.setOnClickListener{
             findNavController().navigate(R.id.forgotten_password)

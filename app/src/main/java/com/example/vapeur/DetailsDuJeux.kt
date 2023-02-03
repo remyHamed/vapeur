@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -40,6 +42,7 @@ class DetailsDuJeux : Fragment() {
         var publishers: String,
         var final_formatted: String,
         var header_image: String,
+        var background: String
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,59 +81,35 @@ class DetailsDuJeux : Fragment() {
         }
 
         GlobalScope.launch {
-            try {
-                val response = fetchGameInfos(appid ?: 0)
-                if (response.isSuccessful) {
-                    val responseJson = response.body()!!
-                    val appidData = responseJson.getAsJsonObject("$appid")
+            val response = fetchGameInfos(appid ?: 0)
+            if (response.isSuccessful) {
+                val json = response.body()
 
-                    if (appidData.get("success").asBoolean) {
-                        val data = appidData.getAsJsonObject("data")
-                        val gameInfosPrice = data?.getAsJsonObject("price_overview")
+                val data = json?.getAsJsonObject(appid.toString())
+                val gameInfos = data?.getAsJsonObject("data")
 
-                        val gameData = GameData(
-                            name = data.get("name").asString ?: "N/A",
-                            publishers = gameInfosPrice?.get("final_formatted")?.asString ?: "gratuit",
-                            final_formatted = data.get("publishers").asJsonArray[0].asString,
-                            header_image = data?.get("header_image")?.asString ?: "N/A"
+                val name = gameInfos?.get("name")?.asString ?: "N/A"
+                val publishers = gameInfos?.getAsJsonArray("publishers")?.joinToString { it.asString } ?: "N/A"
+                val final_formatted = gameInfos?.get("final_formatted")?.asString ?: "N/A"
+                val header_image = gameInfos?.get("header_image")?.asString ?: "N/A"
+                val background = gameInfos?.get("background")?.asString ?: "N/A"
+
+                withContext(Dispatchers.Main) {
+                    gameDataList.add(
+                        GameData(
+                            name = name,
+                            publishers = publishers,
+                            final_formatted = final_formatted,
+                            header_image = header_image,
+                            background = background
                         )
-
-                        gameDataList.add(gameData)
-
-                        val gameName = data.get("name").asString ?: "N/A"
-                        gameData.name = gameName ?: "N/A"
-
-                        val gamePrice = gameInfosPrice?.get("final_formatted")?.asString ?: "gratuit"
-                        gameData.final_formatted = gamePrice ?: "gratuit"
-
-                        val gamePublishers = data.get("publishers").asJsonArray[0].asString
-                        val publisherList = ArrayList<String>()
-                        if (gamePublishers != null) {
-                            if (gamePublishers.isNotEmpty()) {
-                                publisherList.add(gamePublishers)
-                            }
-                        }
-                        val publisherString = publisherList.joinToString(", ")
-                        gameData.publishers = publisherString
-
-                        val gameImage = data?.get("header_image")?.asString ?: "N/A"
-                        gameData.header_image = gameImage ?: "N/A"
-
-                    }
-                    viewAdapter = GameDetailsAdapter(gameDataList)
-                    recyclerView.adapter = viewAdapter
+                    )
+                    viewAdapter.notifyDataSetChanged()
                 }
-            } catch (e: Exception) {
-                println(e)
             }
         }
 
-        this@DetailsDuJeux.gameDataList.addAll(gameDataList)
-        viewAdapter.notifyDataSetChanged()
-        return view
+        return recyclerView
     }
 
-    companion object {
-
-    }
 }
